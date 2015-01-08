@@ -1,0 +1,46 @@
+<ion-view view-title="Bus">
+  <ion-content>
+
+<form ng-submit="submit()" ng-controller="BusCtrl">
+
+    <div class="list list-inset" >
+      <label class="item item-input">
+        <input type="text" name="firstName" ng-model="inputs.myForm.firstName" placeholder="Source">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="lastName"  ng-model="inputs.myForm.lastName" placeholder="Destination">
+      </label>
+    </div>
+
+
+</form>
+
+<ion-scroll zooming="true" direction="y" style="width: 500px; height: 500px">
+
+<!--	<ion-list>
+    <ion-item ng-repeat="route in routes | filter:inputs.myForm.firstName | filter: inputs.myForm.lastName" class = "item-text-wrap" href="#/tab/map/{{route.id}}">
+    <h1>{{route.busName}} ({{route.busNo}})</h1>
+    <h2>{{route.path}}</h2>
+	</ion-list>
+
+-->
+
+
+<div class="list card " ng-controller="BusCtrl">
+
+  <a ng-repeat="route in routes | filter:inputs.myForm.firstName | filter: inputs.myForm.lastName" href="#/tab/map/{{route.id}}" class="item item-icon-left item-text-wrap">
+  <!--  <i class="icon ion-home"></i> -->
+    <h2 style="color:blue">{{route.busName}} ({{route.busNo}})</h2>
+    <h2>{{route.path}}</h2>
+  </a>
+</div>
+
+</ion-scroll >
+<!--	<div>{{inputs.myForm.firstName}}</div> -->
+
+
+
+
+
+  </ion-content>
+</ion-view>

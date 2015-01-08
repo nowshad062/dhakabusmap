@@ -1,0 +1,30 @@
+<ion-view view-title="Chats">
+  <ion-content>
+    <form ng-submit="submit()" ng-controller="LocEntryCtrl">
+
+      <div class="list list-inset" >
+        <label class="item item-input">
+          <input type="text" name="stopid" ng-model="stopage.id" placeholder="Enter Bus Stopage Id">
+        </label>
+        <label class="item item-input">
+          <input type="text" name="stopage" ng-model="stopage.name" placeholder="Enter Bus Stopage Name">
+        </label>
+        <label class="item item-input">
+          <input type="text" name="latitude"  ng-model="stopage.latitude" placeholder="Enter Latitude">
+        </label>
+        <label class="item item-input">
+          <input type="text" name="longitude"  ng-model="stopage.longitude" placeholder="Enter Longitude">
+        </label>
+        <button class="button button-block button-positive">Submit</button>
+      </div>
+
+        <ion-list>
+          <ion-item ng-repeat="stopage in stopages" type = "item-text-wrap" href="#/tab/map/{{route.id}}">
+          {{stopage.name}}
+        </ion-list>
+      
+    </form>
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,34 @@
+<ion-view view-title="Chats">
+  <ion-content>
+    <form ng-submit="submit()" ng-controller="RouteEntryCtrl">
+
+      <div class="list list-inset" >
+        <label class="item item-input">
+          <input type="text" name="routeid" ng-model="route.id" placeholder="Enter Route Id (Ex: 1)">
+        </label>
+        <label class="item item-input">
+          <input type="text" name="routepath" ng-model="route.path" placeholder="Enter Route Path (Ex: Azimpur-New Market-City College-Asad gate)">
+        </label>
+        <label class="item item-input">
+          <input type="text" name="routeroot"  ng-model="route.root" placeholder="Enter Route According to Stopage (Ex: 1-2-3-4)">
+        </label>
+        <label class="item item-input">
+          <input type="text" name="routebusno"  ng-model="route.busNo" placeholder="Enter Bus Number (Ex: 36)">
+        </label>
+        <label class="item item-input">
+          <input type="text" name="routebusname" ng-model="route.busName" placeholder="Enter Bus Name (Ex: Bikolpo)">
+        </label>
+
+        <button class="button button-block button-positive">Submit</button>
+      </div>
+
+        <ion-list>
+          <ion-item ng-repeat="route in routes" type = "item-text-wrap" href="#/tab/map/{{route.id}}">
+          {{route.path}}
+        </ion-list>
+      
+    </form>
+
+
+  </ion-content>
+</ion-view>
